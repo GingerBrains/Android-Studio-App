@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity2 extends AppCompatActivity {
 
     EditText name,roll_no;
-    Button submitButton;
+    Button submitButton,queryButton;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -43,5 +43,12 @@ public class MainActivity2 extends AppCompatActivity {
                 reference.child(rollNos).setValue(helperClass);
             }
         });
+
+        queryButton = findViewById(R.id.query_button);
+        queryButton.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
+            startActivity(intent);
+        });
+
     }
 }
